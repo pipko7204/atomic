@@ -25,14 +25,19 @@ function handleInput(value) {
   <div class="container">
   <BaseInput v-model="letters" @update:model-value="handleInput"/>
   <div>
-    <BaseButton v-for="sort in sorts" @click="handleClick(sort)" class="base-button">{{sort}}</BaseButton>
+    <BaseButton  @click="handleClick('ЗСК')" class="base-button b1">ЗСК</BaseButton>
+    <BaseButton  @click="handleClick('ЗКС')" class="base-button b2">ЗКС</BaseButton>
+    <BaseButton  @click="handleClick('КЗС')" class="base-button b3">КЗС</BaseButton>
+    <BaseButton  @click="handleClick('КСЗ')" class="base-button b4">КСЗ</BaseButton>
+    <BaseButton  @click="handleClick('СКЗ')" class="base-button b5">СКЗ</BaseButton>
+    <BaseButton  @click="handleClick('СЗК')" class="base-button b6">СЗК</BaseButton>
   </div>
   <div>
-    <template v-for="(letter, index) in result" :key="index">
-      <span v-if="letter === 'к'" style="color: red">{{letter}}</span>
-      <span v-if="letter === 'с'" style="color: blue">{{letter}}</span>
-      <span v-if="letter === 'з'" style="color: green">{{letter}}</span>
-    </template>
+    <span class="letters" v-for="(letter, index) in result" :key="index">
+      <span class="red" v-if="letter === 'к'" style="color: red">{{letter}}</span>
+      <span class="blue" v-if="letter === 'с'" style="color: blue">{{letter}}</span>
+      <span class="green" v-if="letter === 'з'" style="color: green">{{letter}}</span>
+    </span>
   </div>
   </div>
 </template>
